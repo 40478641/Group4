@@ -12,11 +12,11 @@ We know the role. Database contains current World data.
 ##Success End Condition
 Will show the top populated countries in a continent
 ##Failed End Condition
-Output will not produced 
+Output will not produce 
 ##Primary Actor
 Developer 
 ##Trigger
- Developer collect the World data from world.sql 
+ Developer collects the World data from world.sql 
 ##MAIN SUCCESS SCENARIO
  1. Developer collects name of the countries and population to get the top populated countries for.
  2. Developer filters the top populated countries 
