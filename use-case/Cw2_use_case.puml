@@ -1,0 +1,31 @@
+@startuml
+
+actor C1 as "Clinet"
+
+rectangle Database
+
+rectangle "World Information System" {
+    usecase UC4 as "As a client I want to do all
+    the countries in the world organized
+    so that it is the largest population
+    to smallest."
+
+    usecase UCa as "print the world countries population"
+    usecase UCb as "print the world cities population"
+
+
+    C1 - UC4
+    UC4 ..> UCa : include
+    UC4 - Database
+
+    usecase UAE as "As a client I want to be all
+                    the cities in the world organized
+                    so that it is the largest population to smallest."
+    C1 - UAE
+    UAE ..>UCb: inlcude
+    UAE - Database
+
+
+}
+
+@enduml
