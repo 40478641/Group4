@@ -1,6 +1,7 @@
 package com.napier.sem;
 
 import java.sql.*;
+
 import java.util.ArrayList;
 
 public class App
@@ -156,7 +157,7 @@ public class App
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get salary details");
+            System.out.println("Failed to get Countries in the world organised by largest population to smallest");
             return null;
         }
     }
@@ -207,7 +208,7 @@ public class App
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get countries details");
+            System.out.println("Failed to get Countries in a continent organised by largest population to smallest");
             return null;
         }
     }
@@ -258,7 +259,7 @@ public class App
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get salary details");
+            System.out.println("Failed to get countries in a region organised by largest population to smallest");
             return null;
         }
     }
@@ -308,7 +309,7 @@ public class App
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get world information");
+            System.out.println("Failed to get Top 10 populated countries in the world");
         }
         return null;
     }
@@ -356,7 +357,7 @@ public class App
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get world information");
+            System.out.println("Failed to get Top 10 populated countries in a continent");
         }
         return null;
     }
@@ -406,7 +407,7 @@ public class App
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get world information");
+            System.out.println("Failed to get Top 10 populated countries in a region");
         }
         return null;
     }
@@ -453,7 +454,7 @@ public class App
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get city information");
+            System.out.println("Failed to get Cities in the world organised by largest population to smallest");
         }
         return null;
     }
@@ -503,7 +504,7 @@ public class App
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get city continent details");
+            System.out.println("Failed to get Cities in a continent organised by largest population to smallest");
             return null;
         }
     }
