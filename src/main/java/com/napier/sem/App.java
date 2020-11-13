@@ -428,49 +428,46 @@ public class App
     //Cities in the world organised by largest population to smallest
     public ArrayList<city> getcityworldlist()
     {
-        try
-        {
+        try {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT Name, Country, District, Population "
+                    "SELECT Name, CountryCode, District, Population "
                             + "FROM city "
-                            + "ORDER BY Population DESC";
-            // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
+                            + "ORDER BY Population DESC ";
+            ResultSet rset1 = stmt.executeQuery(strSelect);
             // Extract Country information
             ArrayList<city> cityworldlist = new ArrayList<city>();
-            while (rset.next())
+            while (rset1.next())
             {
-                city ctry = new city();
-                ctry.Name = rset.getString("Name");
-                ctry.Country = rset.getString("Country");
-                ctry.District = rset.getString("District");
-                ctry.Population = rset.getInt("Population");
-                cityworldlist.add(ctry);
+                city cty= new city();
+                cty.Name=rset1.getString("Name");
+                cty.CountryCode=rset1.getString("CountryCode");
+                cty.District=rset1.getString("District");
+                cty.Population=rset1.getInt("Population");
+                cityworldlist.add(cty);
             }
             return cityworldlist;
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get city world details");
-            return null;
+            System.out.println("Failed to get city information");
         }
+        return null;
     }
 
     public void printcityworldlist(ArrayList<city> cityworldlist)
     {
         // Print header
-
-        System.out.println(String.format("%-25s %-25s %-35s %25s" , "Name", "Country", "District", "Population"));
+        System.out.println(String.format("%-25s %-25s %-35s %25s", "Name", "CountryCode", "District", "Population" ));
         // Loop over all countries in the list
-        for (city ctry : cityworldlist)
+        for (city cty : cityworldlist)
         {
             String cty_string =
                     String.format("%-25s %-25s %-35s %25s",
-                            ctry.Name, ctry.Country, ctry.District, ctry.Population);
+                            cty.Name, cty.CountryCode, cty.District, cty.Population );
             System.out.println(cty_string);
         }
     }
@@ -485,7 +482,7 @@ public class App
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT city.Name, city.CountryCode, city.Country, city.District, city.District, city.Population, country.Code, country.Continent  "
+                    "SELECT city.Name, city.CountryCode, city.District, city.District, city.Population, country.Code, country.Continent  "
                             + "FROM city, country WHERE city.CountryCode = country.Code AND country.Continent = 'Asia'"
                             + "ORDER BY city.Population DESC";
             // Execute SQL statement
@@ -496,7 +493,7 @@ public class App
             {
                 city ctry = new city();
                 ctry.Name = rset.getString("Name");
-                ctry.Country = rset.getString("Country");
+                ctry.CountryCode = rset.getString("CountryCode");
                 ctry.District = rset.getString("District");
                 ctry.Population = rset.getInt("Population");
                 citycontinentlist.add(ctry);
@@ -515,13 +512,13 @@ public class App
     {
         // Print header
 
-        System.out.println(String.format("%-25s %-25s %-35s %25s" , "Name", "Country", "District", "Population"));
+        System.out.println(String.format("%-25s %-25s %-35s %25s" , "Name", "CountryCode", "District", "Population"));
         // Loop over all countries in the list
         for (city ctry : getcitycontinentlist())
         {
             String cty_string =
                     String.format("%-25s %-25s %-35s %25s",
-                            ctry.Name, ctry.Country, ctry.District, ctry.Population);
+                            ctry.Name, ctry.CountryCode, ctry.District, ctry.Population);
             System.out.println(cty_string);
         }
     }
