@@ -1,7 +1,7 @@
 #CHARACTERISTIC INFORMATION
 #Goal in Context
 
-4. As a client I want to do the top populated countries in the world so that it is provided by the user.
+4.  As a client I want to display the top populated countries in the world so that it is provided by the user.
  
 ##Scope
 Student Group Project

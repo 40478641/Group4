@@ -1,7 +1,7 @@
 #CHARACTERISTIC INFORMATION
 #Goal in Context
 
-8. As a client I want to be all the cities in a continent organized so that it is the largest population to smallest.
+8. As a client I want to display all the cities in a continent organized so that it is the largest population to smallest.
 
 ##Scope
 Student Group Project

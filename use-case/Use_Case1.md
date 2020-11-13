@@ -1,7 +1,7 @@
 #CHARACTERISTIC INFORMATION
 #Goal in Context
 
-1. As a client I want to do all the countries in the world organized so that it is the largest population to smallest.
+1. 1. As a client I want to display all the countries in the world organized so that it is the largest population to smallest.
 ##Scope
 Student Group Project
 ##Level
