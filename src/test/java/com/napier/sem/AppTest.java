@@ -31,5 +31,4 @@ class AppTest
         citylist.add(null);
         app.printcitylist(citylist);
     }
-
 }
