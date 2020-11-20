@@ -729,13 +729,22 @@ public class App
 
     //Print All of Country Ouput
     public void printcountrylist(ArrayList<country> countrylist)
+
     {
+        // Check country is not null
+        if (countrylist == null)
+        {
+            System.out.println("No Country Information");
+            return;
+        }
         // Print header
 
         System.out.println(String.format("%-10s %-25s %-25s %-35s %-25s %10s", "Code", "Name", "Continent", "Region", "Population", "Capital"));
         // Loop over all countries in the list
         for (country ctry : countrylist)
         {
+            if (ctry == null)
+                continue;
             String cty_string =
                     String.format("%-10s %-25s %-25s %-35s %-25s %10s",
                             ctry.Code, ctry.Name, ctry.Continent, ctry.Region, ctry.Population, ctry.Capital);
@@ -746,12 +755,20 @@ public class App
     //Print All of City Output
     public void printcitylist(ArrayList<city> citylist)
     {
+        // Check country is not null
+        if (citylist == null)
+        {
+            System.out.println("No Country Information");
+            return;
+        }
         // Print header
 
         System.out.println(String.format("%-25s %-25s %-35s %25s" , "Name", "CountryCode", "District", "Population"));
         // Loop over all countries in the list
         for (city ctry : citylist)
         {
+            if (ctry == null)
+                continue;
             String cty_string =
                     String.format("%-25s %-25s %-35s %25s",
                             ctry.Name, ctry.CountryCode, ctry.District, ctry.Population);
