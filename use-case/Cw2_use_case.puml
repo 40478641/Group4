@@ -16,6 +16,15 @@ rectangle "World Information System" {
     C1 --> (Display the top populated region in all countries)
     C1 --> (Display all the largest population Cities to smallest over the world)
     C1 --> (Display all the largest population Cities to smallest in a continent)
+    C1 --> (Display all the cities in a region organised by largest population to smallest)
+    C1 --> (Display all the cities in a country organised by largest population to smallest)
+    C1 --> (Display all the cities in a district organised by largest population to smallest)
+    C1 --> (Display the top populated cities in the world)
+    C1 --> (Display the top populated cities in a continent)
+    C1 --> (Display the top populated cities in a region)
+    C1 --> (Display the top populated cities in a country)
+    C1 --> (Display the top populated cities in a district)
+
 }
 
 @enduml
