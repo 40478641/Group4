@@ -12,7 +12,7 @@ public class App
         App a = new App();
 
         // Connect to database
-        a.connect();
+        a.connect("localhost:33060");
 
         // Extract world information
         ArrayList<country> countrylist = a.getCountryList();
@@ -107,8 +107,9 @@ public class App
 
     /**
      * Connect to the MySQL database.
+     * @param s
      */
-    public void connect()
+    public void connect(String s)
     {
         try
         {
