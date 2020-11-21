@@ -35,7 +35,7 @@
                     <finalName>Group4</finalName>
                     <archive>
                         <manifest>
-                            <mainClass>com.napier.sem.Group4</mainClass>
+                            <mainClass>com.napier.sem</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
