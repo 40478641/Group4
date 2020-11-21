@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>Groupseven</artifactId>
-    <version>1.0-v0.2-alpha3</version>
+    <artifactId>Group4</artifactId>
+    <version>v0.1-alpha5</version>
 
     <dependencies>
         <dependency>
