@@ -1017,7 +1017,7 @@ public class App
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT SUM(Population), Region FROM country GROUP BY Region ";
+                    "SELECT SUM(Population), Region FROM country WHERE Region='Eastern Asia'";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Extract City information
