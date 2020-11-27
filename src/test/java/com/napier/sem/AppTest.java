@@ -31,4 +31,19 @@ class AppTest
         citylist.add(null);
         app.printcitylist(citylist);
     }
+    @Test
+    void printAllRegion()
+    {
+        ArrayList<country> regions = new ArrayList<country>();
+//        regions.add(null);
+        app.printAllRegion(null);
+    }
+    @Test
+    void printlanguagelist()
+    {
+        ArrayList<countrylanguage> languagelist = new ArrayList<countrylanguage>();
+        languagelist.add(null);
+        app.printlanguagelist(languagelist);
+    }
+
 }
