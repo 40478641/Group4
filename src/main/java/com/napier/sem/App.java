@@ -38,6 +38,7 @@ public class App
         ArrayList<city> cityregionlimit10 = a.getcityregionlimit10();
         ArrayList<city> citycountrylimit10 =a.getcitycountrylimit10();
         ArrayList<city> citydistrictlimit10 =a.getcitydistrictlimit10();
+        ArrayList<countrylanguage> languagelist = a.getlanguagelist();
 
         //Countries in the world organised by largest population to smallest.
         System.out.println("++++++++++++++++~ Country organised by largest population to smallest ~++++++++++++++++");
@@ -102,6 +103,10 @@ public class App
         //Top 10 populated cities in a district
         System.out.println("++++++++++++++++~ Top 10 populated cities in a district ~++++++++++++++++");
         a.printcitylist(citydistrictlimit10);
+
+        //Language from largest to smallest
+        System.out.println("++++++++++++++++~ Country Language Largest to Smallest ~++++++++++++++++");
+        a.printlanguagelist(languagelist);
 
         // Disconnect from database
         a.disconnect();
@@ -735,6 +740,40 @@ public class App
         }
     }
 
+
+    //Languages from greatest number to smallest
+
+    public ArrayList<countrylanguage> getlanguagelist()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT COUNT(CountryCode), Language FROM countrylanguage GROUP BY Language ORDER By COUNT(CountryCode) DESC ";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Extract City information
+            ArrayList<countrylanguage> languagelist = new ArrayList<countrylanguage>();
+            while (rset.next())
+            {
+                countrylanguage clg = new countrylanguage();
+                clg.CountryCode = rset.getString("COUNT(CountryCode)");
+                clg.Language = rset.getString("Language");
+                languagelist.add(clg);
+            }
+            return languagelist;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get Language detail");
+            return null;
+        }
+    }
+
+
     //Print All of Country Ouput
     public void printcountrylist(ArrayList<country> countrylist)
 
@@ -763,7 +802,7 @@ public class App
     //Print All of City Output
     public void printcitylist(ArrayList<city> citylist)
     {
-        // Check country is not null
+        // Check city is not null
         if (citylist == null)
         {
             System.out.println("No Country Information");
@@ -783,6 +822,30 @@ public class App
             System.out.println(cty_string);
         }
 
+    }
+
+    //Print All of Language Output
+    public void printlanguagelist(ArrayList<countrylanguage>languagelist)
+    {
+        // Check language is not null
+        if (languagelist == null)
+        {
+            System.out.println("No Language Information");
+            return;
+        }
+        // Print header
+
+        System.out.println(String.format("%-35s %25s" , "CountryCode", "Language"));
+        // Loop over all countries in the list
+        for (countrylanguage clg : languagelist)
+        {
+            if (clg == null)
+                continue;
+            String cty_string =
+                    String.format("%-35s %25s",
+                            clg.CountryCode, clg.Language);
+            System.out.println(cty_string);
+        }
     }
 
 }
