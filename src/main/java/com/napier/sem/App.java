@@ -38,6 +38,14 @@ public class App
         ArrayList<city> cityregionlimit10 = a.getcityregionlimit10();
         ArrayList<city> citycountrylimit10 =a.getcitycountrylimit10();
         ArrayList<city> citydistrictlimit10 =a.getcitydistrictlimit10();
+        ArrayList<city> capitallist=a.getcapitallist();
+        ArrayList<city> capitalcontinentlist=a.getcapitalcontinentlist();
+        ArrayList<city> CapitalRegionList=a.getCapitalRegionList();
+        ArrayList<city> CapitalLimit10=a.getCapitalLimit10();
+        ArrayList<city> CapitalContinentLimit10=a.getCapitalContinentLimit10();
+        ArrayList<city> CapitalRegionLimit10=a.getCapitalRegionLimit10();
+
+
 
         //Countries in the world organised by largest population to smallest.
         System.out.println("++++++++++++++++~ Country organised by largest population to smallest ~++++++++++++++++");
@@ -102,6 +110,30 @@ public class App
         //Top 10 populated cities in a district
         System.out.println("++++++++++++++++~ Top 10 populated cities in a district ~++++++++++++++++");
         a.printcitylist(citydistrictlimit10);
+
+        //Capital cities in the world organised by largest population to smallest
+        System.out.println("++++++++++++++++ Capital cities in the world organised by largest population to smallest ++++++++++++++++");
+        a.printcitylist(capitallist);
+
+        //Capital cities in the continent organised by largest population to smallest
+        System.out.println("++++++++++++++++ Capital cities in the world organised by largest population to smallest ++++++++++++++++");
+        a.printcitylist(capitalcontinentlist);
+
+        //Capital cities in the region organised by largest population to smallest
+        System.out.println("++++++++++++++++ Capital cities in the region organised by largest population to smallest ++++++++++++++++");
+        a.printcitylist(CapitalRegionList);
+
+        //Top 10 populated capital cities in the world
+        System.out.println("++++++++++++++++~ Top 10 populated capital cities in the world ~++++++++++++++++");
+        a.printcitylist(CapitalLimit10);
+
+        //Top 10 populated capital cities in a continent
+        System.out.println("++++++++++++++++~ Top 10 populated capital cities in a continent ~++++++++++++++++");
+        a.printcitylist(CapitalContinentLimit10);
+
+        //Top 10 populated capital cities in a region
+        System.out.println("++++++++++++++++~ Top 10 populated capital cities in a region ~++++++++++++++++");
+        a.printcitylist(CapitalRegionLimit10);
 
         // Disconnect from database
         a.disconnect();
@@ -735,7 +767,208 @@ public class App
         }
     }
 
-    //Print All of Country Ouput
+    //Capital cities in the world organised by largest population to smallest
+    public ArrayList<city> getcapitallist()
+    {
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT city.ID,city.Name,city.CountryCode,city.District,city.Population,country.Code,country.Capital"
+                            +" FROM city, country Where country.Capital = city.ID and city.CountryCode = country.Code"
+                            +" ORDER BY Population desc";
+
+            ResultSet rset1 = stmt.executeQuery(strSelect);
+            // Extract City information
+            ArrayList<city> capitallist = new ArrayList<city>();
+            while (rset1.next())
+            {
+                city cty= new city();
+                cty.Name=rset1.getString("Name");
+                cty.CountryCode=rset1.getString("CountryCode");
+                cty.District=rset1.getString("District");
+                cty.Population=rset1.getInt("Population");
+                capitallist.add(cty);
+            }
+            return capitallist;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get capital cities information");
+        }
+        return null;
+    }
+
+    //Capital cities in the continent organised by largest population to smallest
+
+    public ArrayList<city> getcapitalcontinentlist()
+    {
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT city.ID,country.Capital,city.District,city.Name,country.Code,city.CountryCode,country.Name,city.Population"
+                            +" FROM city, country Where country.Capital = city.ID and city.CountryCode = country.Code AND country.Continent = 'Asia'"
+                            +" ORDER BY Population desc";
+            ResultSet rset1 = stmt.executeQuery(strSelect);
+            // Extract City information
+            ArrayList<city> capitalcontinentlist = new ArrayList<city>();
+            while (rset1.next())
+            {
+                city cty= new city();
+                cty.Name=rset1.getString("Name");
+                cty.CountryCode=rset1.getString("CountryCode");
+                cty.District=rset1.getString("District");
+                cty.Population=rset1.getInt("Population");
+                capitalcontinentlist.add(cty);
+            }
+            return capitalcontinentlist;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get capital cities information in Asia");
+        }
+        return null;
+    }
+
+    //Capital cities in the region organised by largest population to smallest
+
+    public ArrayList<city> getCapitalRegionList()
+    {
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT city.ID,country.Capital,city.Name,city.District,country.Code,city.CountryCode,country.Name,city.Population"
+                            +" FROM city, country Where country.Capital = city.ID and city.CountryCode = country.Code AND country.Region = 'Eastern Asia'"
+                            +" ORDER BY Population desc";
+            ResultSet rset1 = stmt.executeQuery(strSelect);
+            // Extract City information
+            ArrayList<city> CapitalRegionList = new ArrayList<city>();
+            while (rset1.next())
+            {
+                city cty= new city();
+                cty.Name=rset1.getString("Name");
+                cty.CountryCode=rset1.getString("CountryCode");
+                cty.District=rset1.getString("District");
+                cty.Population=rset1.getInt("Population");
+                CapitalRegionList.add(cty);
+            }
+            return CapitalRegionList;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get capital cities information in Eastern Asia");
+        }
+        return null;
+    }
+
+    //Top 10 populated Capital cities in the world
+    public ArrayList<city> getCapitalLimit10()
+    {
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT city.ID,country.Capital,city.Name,country.Code,city.CountryCode,country.Name,city.District,city.Population"
+                            +" FROM city, country Where country.Capital = city.ID and city.CountryCode = country.Code"
+                            +" ORDER BY Population desc limit 10";
+            ResultSet rset1 = stmt.executeQuery(strSelect);
+            // Extract City information
+            ArrayList<city> CapitalLimit10 = new ArrayList<city>();
+            while (rset1.next())
+            {
+                city cty= new city();
+                cty.Name=rset1.getString("Name");
+                cty.CountryCode=rset1.getString("CountryCode");
+                cty.District=rset1.getString("District");
+                cty.Population=rset1.getInt("Population");
+                CapitalLimit10.add(cty);
+            }
+            return CapitalLimit10;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get top capital cities  information");
+        }
+        return null;
+    }
+
+    //Top 10 populated Capital cities in a Continent
+    public ArrayList<city> getCapitalContinentLimit10()
+    {
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT city.ID,country.Capital,city.Name,country.Code,city.CountryCode,city.District,country.Name,city.Population"
+                            +" FROM city, country Where country.Capital = city.ID and city.CountryCode = country.Code  AND country.Continent = 'Asia'"
+                            +" ORDER BY Population desc limit 10";
+            ResultSet rset1 = stmt.executeQuery(strSelect);
+            // Extract City information
+            ArrayList<city> CapitalContinentLimit10 = new ArrayList<city>();
+            while (rset1.next())
+            {
+                city cty= new city();
+                cty.Name=rset1.getString("Name");
+                cty.CountryCode=rset1.getString("CountryCode");
+                cty.District=rset1.getString("District");
+                cty.Population=rset1.getInt("Population");
+                CapitalContinentLimit10.add(cty);
+            }
+            return CapitalContinentLimit10;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get top capital cities  information");
+        }
+        return null;
+    }
+
+    //Top 10 populated Capital cities in a Region
+    public ArrayList<city> getCapitalRegionLimit10()
+    {
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT city.ID,country.Capital,city.Name,country.Code,city.District,city.CountryCode,country.Name,city.Population"
+                            +" FROM city, country Where country.Capital = city.ID and city.CountryCode = country.Code AND country.Region = 'Eastern Asia'"
+                            +" ORDER BY Population desc limit 10";
+            ResultSet rset1 = stmt.executeQuery(strSelect);
+            // Extract City information
+            ArrayList<city> CapitalRegionLimit10 = new ArrayList<city>();
+            while (rset1.next())
+            {
+                city cty= new city();
+                cty.Name=rset1.getString("Name");
+                cty.CountryCode=rset1.getString("CountryCode");
+                cty.District=rset1.getString("District");
+                cty.Population=rset1.getInt("Population");
+                CapitalRegionLimit10.add(cty);
+            }
+            return CapitalRegionLimit10;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get top capital cities list information in Eastern Asia");
+        }
+        return null;
+    }
+
+    //Print All of Country Output
     public void printcountrylist(ArrayList<country> countrylist)
 
     {
