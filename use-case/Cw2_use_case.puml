@@ -31,8 +31,8 @@ rectangle "World Information System" {
     C1 --> (Display the top populated Capital cities in the world)
     C1 --> (Display the top populated Capital cities in the continent)
     C1 --> (Display the top populated Capital cities in the region)
-    C1 --> (Display The population of people, people living in cities, and people not living in cities in a continent)
-    C1 --> (Display The population of people, people living in cities, and people not living in cities in a region)
+    C1 --> (Display the  Population of a Region)
+    C1 --> (Display the Languages from greatest number to smallest)
 
 }
 

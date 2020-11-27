@@ -1,6 +1,6 @@
 #CHARACTERISTIC INFORMATION
 #Goal in Context
-24. As a client I want to display the population of people, people living in cities, and people not living in cities in each region so that I can accept the knowledge of citizens and townspeople.
+28. As a client I want to see the population of a region so that I can know the knowledge of countryside people and urban people for the information of the organization.
 ##Scope
 Student Group Project
 ##Level

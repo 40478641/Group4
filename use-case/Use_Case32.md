@@ -1,6 +1,6 @@
 #CHARACTERISTIC INFORMATION
 #Goal in Context
-23. As a client I want to show the population of people, people living in cities, and people not living in cities in each continent so that I can get the knowledge of rural people and urban people.
+32. As a client I want to view the number of people or languages reports such as Chinese, English, Hindi, Spanish, and Arabic so that I can see the percentage of the world population from the greatest number to smallest. 
 ##Scope
 Student Group Project
 ##Level
