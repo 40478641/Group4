@@ -38,12 +38,13 @@ class AppTest
 //        regions.add(null);
         app.printPopulationRegion(null);
     }
+
     @Test
-    void printlanguagelist()
+    void printWorldPopulation()
     {
-        ArrayList<countrylanguage> languagelist = new ArrayList<countrylanguage>();
-        languagelist.add(null);
-        app.printlanguagelist(languagelist);
+        ArrayList<country> WorldPopulation = new ArrayList<country>();
+//        CityPopulation.add(null);
+        app.printWorldPopulation(null);
     }
 
     @Test
@@ -74,6 +75,14 @@ class AppTest
         ArrayList<city> CityPopulation = new ArrayList<city>();
 //        CityPopulation.add(null);
         app.printCityPopulation(null);
+    }
+
+    @Test
+    void printlanguagelist()
+    {
+        ArrayList<countrylanguage> languagelist = new ArrayList<countrylanguage>();
+        languagelist.add(null);
+        app.printlanguagelist(languagelist);
     }
 
 }
