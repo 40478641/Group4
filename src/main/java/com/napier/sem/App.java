@@ -880,32 +880,6 @@ public class App {
         return null;
     }
 
-    //Languages from greatest number to smallest
-
-    public ArrayList<countrylanguage> getlanguagelist() {
-        try {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
-            // Create string for SQL statement
-            String strSelect =
-                    "SELECT COUNT(CountryCode), Language FROM countrylanguage GROUP BY Language ORDER By COUNT(CountryCode) DESC ";
-            // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
-            // Extract City information
-            ArrayList<countrylanguage> languagelist = new ArrayList<countrylanguage>();
-            while (rset.next()) {
-                countrylanguage clg = new countrylanguage();
-                clg.CountryCode = rset.getString("COUNT(CountryCode)");
-                clg.Language = rset.getString("Language");
-                languagelist.add(clg);
-            }
-            return languagelist;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get Language detail");
-            return null;
-        }
-    }
 
     //The Population of a Continent !
     public ArrayList<country> getContinentPopulation() {
@@ -1033,6 +1007,32 @@ public class App {
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get City Population");
+            return null;
+        }
+    }
+
+    //Languages from greatest number to smallest
+    public ArrayList<countrylanguage> getlanguagelist() {
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT COUNT(CountryCode), Language FROM countrylanguage GROUP BY Language ORDER By COUNT(CountryCode) DESC ";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Extract City information
+            ArrayList<countrylanguage> languagelist = new ArrayList<countrylanguage>();
+            while (rset.next()) {
+                countrylanguage clg = new countrylanguage();
+                clg.CountryCode = rset.getString("COUNT(CountryCode)");
+                clg.Language = rset.getString("Language");
+                languagelist.add(clg);
+            }
+            return languagelist;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get Language detail");
             return null;
         }
     }
