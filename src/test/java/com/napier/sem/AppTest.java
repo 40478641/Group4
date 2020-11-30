@@ -46,4 +46,34 @@ class AppTest
         app.printlanguagelist(languagelist);
     }
 
+    @Test
+    void printPopulationContinent()
+    {
+        ArrayList<country> continents = new ArrayList<country>();
+        //continents.add(null);
+        app.printPopulationContinent(null);
+    }
+    @Test
+    void printPopulationCountry()
+    {
+        ArrayList<country> country = new ArrayList<country>();
+//        country.add(null);
+        app.printPopulationCountry(null);
+    }
+    @Test
+    void printDistrictPopulation()
+    {
+        ArrayList<city> District = new ArrayList<city>();
+//        District.add(null);
+        app.printDistrictPopulation(null);
+    }
+
+    @Test
+    void printCityPopulation()
+    {
+        ArrayList<city> CityPopulation = new ArrayList<city>();
+//        CityPopulation.add(null);
+        app.printCityPopulation(null);
+    }
+
 }

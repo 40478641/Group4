@@ -1102,6 +1102,40 @@ public class App {
         }
     }
 
+    //Print population of a country
+    public void printPopulationCountry(ArrayList<country> country) {
+        if (country == null) {
+            System.out.println("No data!!");
+            return;
+        }
+        for (country cunt : country) {
+            System.out.println("The population of Country => " + cunt.Name + " : " + cunt.Population);
+        }
+
+    }
+
+    //Print population of a District
+    public void printDistrictPopulation(ArrayList<city> District) {
+        if (District == null) {
+            System.out.println("No data!!");
+            return;
+        }
+        for (city dis : District) {
+            System.out.println("The population of District => " + dis.District + " : " + dis.Population);
+        }
+    }
+
+    //Print population of a City
+    public void printCityPopulation(ArrayList<city> CityPopulation) {
+        if (CityPopulation == null) {
+            System.out.println("No data!!");
+            return;
+        }
+        for (city cty1 : CityPopulation) {
+            System.out.println("The population of City => " + cty1.Name + " : " + cty1.Population);
+        }
+    }
+
     //Print All of Language Output
     public void printlanguagelist(ArrayList<countrylanguage> languagelist) {
         // Check language is not null
@@ -1123,37 +1157,5 @@ public class App {
         }
     }
 
-    //Print population of a country
-    public void printPopulationCountry(ArrayList<country> country) {
-        if (country == null) {
-            System.out.println("No data!!");
-            return;
-        }
-        for (country cunt : country) {
-            System.out.println("The population of Country => " + cunt.Name + " : " + cunt.Population);
-        }
 
-    }
-
-    //Print population of a country
-    public void printDistrictPopulation(ArrayList<city> District) {
-        if (District == null) {
-            System.out.println("No data!!");
-            return;
-        }
-        for (city dis : District) {
-            System.out.println("The population of District => " + dis.District + " : " + dis.Population);
-        }
-    }
-
-    //Print population of a country
-    public void printCityPopulation(ArrayList<city> CityPopulation) {
-        if (CityPopulation == null) {
-            System.out.println("No data!!");
-            return;
-        }
-        for (city cty1 : CityPopulation) {
-            System.out.println("The population of City => " + cty1.Name + " : " + cty1.Population);
-        }
-    }
 }
