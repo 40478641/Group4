@@ -24,14 +24,22 @@ rectangle "World Information System" {
     C1 --> (Display the top populated cities in a region)
     C1 --> (Display the top populated cities in a country)
     C1 --> (Display the top populated cities in a district)
-
     C1 --> (Display all the largest population Capital cities to the smallest over the world)
     C1 --> (Display all the largest population Capital cities to smallest in a continent)
     C1 --> (Display all the largest population Capital cities to smallest in a region)
     C1 --> (Display the top populated Capital cities in the world)
     C1 --> (Display the top populated Capital cities in the continent)
     C1 --> (Display the top populated Capital cities in the region)
+    C1 --> (Display the population of people, people living in cities, and people not living in cities in each continent)
+    C1 --> (Display the population of people, people living in cities, and people not living in cities in each region)
+    C1 --> (Display the population of people, people living in cities, and people not living in cities in each country)
+    C1 --> (Display the  Population of World)
+    C1 --> (Display the  Population of World)
+    C1 --> (Display the  Population of a Continent)
     C1 --> (Display the  Population of a Region)
+    C1 --> (Display the  Population of a Country)
+    C1 --> (Display the  Population of a District)
+    C1 --> (Display the  Population of a City)
     C1 --> (Display the Languages from greatest number to smallest)
 
 }
