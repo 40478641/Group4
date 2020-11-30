@@ -45,6 +45,7 @@ public class App {
         ArrayList<country> CountryPopulation = a.getCountryPopulation();
         ArrayList<city> DistrictPopulation=a.getDistrictPopulation();
         ArrayList<city> CityPopulation= a.getCityPopulation();
+        ArrayList<country> WorldPopulation=a.getWorldPopulation();
 
 
         //Countries in the world organised by largest population to smallest.
@@ -158,6 +159,10 @@ public class App {
         //The population of a City
         System.out.println(" \n ++++++++++++++++++++++++++++++++The population of a City +++++++++++++++++++++++++++ \n ");
         a.printCityPopulation(CityPopulation);
+
+        //The population of World
+        System.out.println(" \n ++++++++++++++++++++++++++++++++The population of World +++++++++++++++++++++++++++ \n ");
+        a.printWorldPopulation(WorldPopulation);
 
 
         // Disconnect from database
@@ -880,6 +885,30 @@ public class App {
         return null;
     }
 
+    //The Population of a World !
+    public ArrayList<country> getWorldPopulation() {
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT SUM(Population) FROM country";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Extract City information
+            ArrayList<country> WorldPopulation = new ArrayList<country>();
+            while (rset.next()) {
+                country wl = new country();
+                wl.Population = (int) rset.getLong("SUM(Population)");
+                WorldPopulation.add(wl);
+            }
+            return WorldPopulation;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get World population");
+            return null;
+        }
+    }
 
     //The Population of a Continent !
     public ArrayList<country> getContinentPopulation() {
@@ -1078,6 +1107,17 @@ public class App {
             System.out.println(cty_string);
         }
 
+    }
+
+    //Print population of world
+    public void printWorldPopulation(ArrayList<country> WorldPopulation) {
+        if (WorldPopulation == null) {
+            System.out.println("No data!!");
+            return;
+        }
+        for (country cont : WorldPopulation) {
+            System.out.println("The population of World => " + " : " + cont.Population);
+        }
     }
 
     //Print population of a continent
