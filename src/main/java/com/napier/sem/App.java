@@ -780,7 +780,7 @@ public class App {
                             + " FROM city, country Where country.Capital = city.ID and city.CountryCode = country.Code AND country.Region = 'Eastern Asia'"
                             + " ORDER BY Population desc";
             ResultSet rset1 = stmt.executeQuery(strSelect);
-            // Extract City information
+            // Extract cities information
             ArrayList<city> CapitalRegionList = new ArrayList<city>();
             while (rset1.next()) {
                 city cty = new city();
@@ -809,7 +809,7 @@ public class App {
                             + " FROM city, country Where city.ID = country.Capital"
                             + " ORDER BY city.Population desc limit 10";
             ResultSet rset1 = stmt.executeQuery(strSelect);
-            // Extract City information
+            // Extract Capital information
             ArrayList<city> CapitalLimit10 = new ArrayList<city>();
             while (rset1.next()) {
                 city cty = new city();
@@ -838,7 +838,7 @@ public class App {
                             + " FROM city, country Where country.Capital = city.ID and city.CountryCode = country.Code  AND country.Continent = 'Asia'"
                             + " ORDER BY Population desc limit 10";
             ResultSet rset1 = stmt.executeQuery(strSelect);
-            // Extract City information
+            // Extract Capital information
             ArrayList<city> CapitalContinentLimit10 = new ArrayList<city>();
             while (rset1.next()) {
                 city cty = new city();
@@ -867,7 +867,7 @@ public class App {
                             + " FROM city, country Where country.Capital = city.ID and city.CountryCode = country.Code AND country.Region = 'Eastern Asia'"
                             + " ORDER BY Population desc limit 10";
             ResultSet rset1 = stmt.executeQuery(strSelect);
-            // Extract City information
+            // Extract Capital information
             ArrayList<city> CapitalRegionLimit10 = new ArrayList<city>();
             while (rset1.next()) {
                 city cty = new city();
@@ -885,7 +885,7 @@ public class App {
         return null;
     }
 
-    //The Population of a World !
+    //The Population of World !
     public ArrayList<country> getWorldPopulation() {
         try {
             // Create an SQL statement
@@ -895,7 +895,7 @@ public class App {
                     "SELECT SUM(Population) FROM country";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-            // Extract City information
+            // Extract World information
             ArrayList<country> WorldPopulation = new ArrayList<country>();
             while (rset.next()) {
                 country wl = new country();
@@ -920,7 +920,7 @@ public class App {
                     "SELECT SUM(Population),Continent FROM country WHERE Continent='Europe'";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-            // Extract City information
+            // Extract Continent information
             ArrayList<country> continents = new ArrayList<country>();
             while (rset.next()) {
                 country cont = new country();
@@ -946,7 +946,7 @@ public class App {
                     "SELECT SUM(Population), Region FROM country WHERE Region='Eastern Asia'";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-            // Extract City information
+            // Extract region information
             ArrayList<country> regions = new ArrayList<country>();
             while (rset.next()) {
                 country regs = new country();
@@ -972,7 +972,7 @@ public class App {
                     "SELECT SUM(Population),Name FROM country WHERE Name='Singapore'";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-            // Extract City information
+            // Extract Country information
             ArrayList<country> country = new ArrayList<country>();
             while (rset.next()) {
                 country cunt = new country();
@@ -998,7 +998,7 @@ public class App {
                     "SELECT SUM(Population),District FROM city WHERE District = 'Kabol'";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-            // Extract City information
+            // Extract district information
             ArrayList<city> District = new ArrayList<city>();
             while (rset.next()) {
                 city dis = new city();
@@ -1050,7 +1050,7 @@ public class App {
                     "SELECT COUNT(CountryCode), Language FROM countrylanguage GROUP BY Language ORDER By COUNT(CountryCode) DESC ";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-            // Extract City information
+            // Extract Languages information
             ArrayList<countrylanguage> languagelist = new ArrayList<countrylanguage>();
             while (rset.next()) {
                 countrylanguage clg = new countrylanguage();
@@ -1095,7 +1095,6 @@ public class App {
             return;
         }
         // Print header
-
         System.out.println(String.format("%-25s %-25s %-35s %25s", "Name", "CountryCode", "District", "Population"));
         // Loop over all countries in the list
         for (city ctry : citylist) {
@@ -1184,7 +1183,6 @@ public class App {
             return;
         }
         // Print header
-
         System.out.println(String.format("%-35s %25s", "CountryCode", "Language"));
         // Loop over all countries in the list
         for (countrylanguage clg : languagelist) {
@@ -1196,6 +1194,5 @@ public class App {
             System.out.println(cty_string);
         }
     }
-
 
 }
