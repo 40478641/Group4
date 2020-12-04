@@ -1,11 +1,13 @@
 package com.napier.sem;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.sql.*;
 
 import java.util.ArrayList;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         // Create new Application
         App a = new App();
 
@@ -46,98 +48,100 @@ public class App {
         ArrayList<city> DistrictPopulation=a.getDistrictPopulation();
         ArrayList<city> CityPopulation= a.getCityPopulation();
         ArrayList<country> WorldPopulation=a.getWorldPopulation();
+        ArrayList<population> livingnoncontinent = a.getlivingnoncontinent();
+        ArrayList<population> livingnonregion = a.getlivingnonregion();
 
 
         //Countries in the world organised by largest population to smallest.
-        System.out.println("++++++++++++++++~ Country organised by largest population to smallest ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Country organised by largest population to smallest ~++++++++++++++++ \n ");
         a.printcountrylist(countrylist);
 
         //Countries in a continent organised by largest population to smallest
-        System.out.println("++++++++++++++++~ Countries in a continent organised by largest population to smallest ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Countries in a continent organised by largest population to smallest ~++++++++++++++++ \n ");
         a.printcountrylist(countrycontinentlist);
 
         //countries in a region organised by largest population to smallest
-        System.out.println("++++++++++++++++~ Countries in a region organised by largest population to smallest ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Countries in a region organised by largest population to smallest ~++++++++++++++++ \n ");
         a.printcountrylist(countryregionlist);
 
         //Top 10 populated countries in the world
-        System.out.println("++++++++++++++++~ Top 10 populated countries in the world ~++++++++++++++++~");
+        System.out.println(" \n ++++++++++++++++~ Top 10 populated countries in the world ~++++++++++++++++~ \n ");
         a.printcountrylist(countryworld10);
 
         //Top 10 populated countries in a continent
-        System.out.println("++++++++++++++++~ Top 10 Populated countries in Asia ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Top 10 Populated countries in Asia ~++++++++++++++++ \n ");
         a.printcountrylist(countrycontinent10);
 
         //Top 10 populated countries in a region
-        System.out.println("++++++++++++++++~ Top 10 populated countries in Eastern Asia Region ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Top 10 populated countries in Eastern Asia Region ~++++++++++++++++ \n ");
         a.printcountrylist(countryregion10);
 
         //Cities in the world organised by largest population to smallest
-        System.out.println("++++++++++++++++~ Cities in the world organised by largest population to smallest ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Cities in the world organised by largest population to smallest ~++++++++++++++++ \n ");
         a.printcitylist(cityworldlist);
 
         //Cities in a continent organised by largest population to smallest
-        System.out.println("++++++++++++++++~ Cities in a continent organised by largest population to smallest ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Cities in a continent organised by largest population to smallest ~++++++++++++++++ \n ");
         a.printcitylist(citycontinentlist);
 
         //Cities in a region organised by largest population to smallest
-        System.out.println("++++++++++++++++~ Cities in a region organised by largest population to smallest ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Cities in a region organised by largest population to smallest ~++++++++++++++++ \n ");
         a.printcitylist(cityregionlist);
 
         //Cities in a country organised by largest population to smallest
-        System.out.println("++++++++++++++++~ Cities in a country organised by largest population to smallest ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Cities in a country organised by largest population to smallest ~++++++++++++++++ \n ");
         a.printcitylist(citycountrylist);
 
         //Cities in a district organised by largest population to smallest
-        System.out.println("++++++++++++++++~ Cities in a district organised by largest population to smallest ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Cities in a district organised by largest population to smallest ~++++++++++++++++ \n ");
         a.printcitylist(citydistrictlist);
 
         //Top 10 populated cities in the world
-        System.out.println("++++++++++++++++~ Top 10 populated cities in the world ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Top 10 populated cities in the world ~++++++++++++++++ \n ");
         a.printcitylist(cityworldlimit10);
 
         //Top 10 populated cities in a continent
-        System.out.println("++++++++++++++++~ Top 10 populated cities in a continent ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Top 10 populated cities in a continent ~++++++++++++++++ \n ");
         a.printcitylist(citycontinentlimit10);
 
         //Top 10 populated cities in a region
-        System.out.println("++++++++++++++++~ Top 10 populated cities in a region ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Top 10 populated cities in a region ~++++++++++++++++ \n ");
         a.printcitylist(cityregionlimit10);
 
         //Top 10 populated cities in a country
-        System.out.println("++++++++++++++++~ Top 10 populated cities in a country ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Top 10 populated cities in a country ~++++++++++++++++ \n ");
         a.printcitylist(citycountrylimit10);
 
         //Top 10 populated cities in a district
-        System.out.println("++++++++++++++++~ Top 10 populated cities in a district ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Top 10 populated cities in a district ~++++++++++++++++ \n ");
         a.printcitylist(citydistrictlimit10);
 
         //Capital cities in the world organised by largest population to smallest
-        System.out.println("++++++++++++++++ Capital cities in the world organised by largest population to smallest ++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++ Capital cities in the world organised by largest population to smallest ++++++++++++++++ \n ");
         a.printcitylist(capitallist);
 
         //Capital cities in the continent organised by largest population to smallest
-        System.out.println("++++++++++++++++ Capital cities in the world organised by largest population to smallest ++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++ Capital cities in the world organised by largest population to smallest ++++++++++++++++ \n ");
         a.printcitylist(capitalcontinentlist);
 
         //Capital cities in the region organised by largest population to smallest
-        System.out.println("++++++++++++++++ Capital cities in the region organised by largest population to smallest ++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++ Capital cities in the region organised by largest population to smallest ++++++++++++++++ \n ");
         a.printcitylist(CapitalRegionList);
 
         //Top 10 populated capital cities in the world
-        System.out.println("++++++++++++++++~ Top 10 populated capital cities in the world ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Top 10 populated capital cities in the world ~++++++++++++++++ \n ");
         a.printcitylist(CapitalLimit10);
 
         //Top 10 populated capital cities in a continent
-        System.out.println("++++++++++++++++~ Top 10 populated capital cities in a continent ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Top 10 populated capital cities in a continent ~++++++++++++++++ \n ");
         a.printcitylist(CapitalContinentLimit10);
 
         //Top 10 populated capital cities in a region
-        System.out.println("++++++++++++++++~ Top 10 populated capital cities in a region ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Top 10 populated capital cities in a region ~++++++++++++++++ \n ");
         a.printcitylist(CapitalRegionLimit10);
 
         //Language from largest to smallest
-        System.out.println(" ++++++++++++++++~ Country Language Largest to Smallest ~++++++++++++++++");
+        System.out.println(" \n ++++++++++++++++~ Country Language Largest to Smallest ~++++++++++++++++ \n ");
         a.printlanguagelist(languagelist);
 
         //Print population of a continent
@@ -163,6 +167,16 @@ public class App {
         //The population of World
         System.out.println(" \n ++++++++++++++++++++++++++++++++The population of World +++++++++++++++++++++++++++ \n ");
         a.printWorldPopulation(WorldPopulation);
+
+        //Living and non-living population of continent
+        System.out.println(" \n ++++++++++++++++++++++++++++++++ Living and Non-Living Population of Continents +++++++++++++++++++++++++++ \n ");
+        a.pringlivingnoncontinent(livingnoncontinent);
+
+        //Living and non-living population of regions
+        System.out.println(" \n ++++++++++++++++++++++++++++++++ Living and Non-Living Population of Regions +++++++++++++++++++++++++++ \n ");
+        a.pringlivingnonregion(livingnonregion);
+
+        //Living and non-living population of countries
 
 
         // Disconnect from database
@@ -1067,6 +1081,132 @@ public class App {
     }
 
 
+    //Living and non-living population of continents
+    public ArrayList<population> getlivingnoncontinent() throws SQLException {
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT COUNT(Name), Continent FROM country GROUP BY Continent ";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Extract Languages information
+            ArrayList<population> livingnoncontinent = new ArrayList<population>();
+            ArrayList<String> livingnonnamecon = new ArrayList<String>();
+            while (rset.next()) {
+                livingnonnamecon.add(rset.getString("Continent"));
+            }
+            for(String eachcondetail:livingnonnamecon){
+                population conpop1 =  new population();
+                ArrayList<String> livingnonname = new ArrayList<String>();
+                BigInteger total = new BigInteger("0");
+                BigInteger popcity = new BigInteger("0");
+                conpop1.name = eachcondetail;
+                String totalpop = "SELECT Code, Population FROM country WHERE Continent = '" + eachcondetail +"'";
+                ResultSet rset1 = stmt.executeQuery(totalpop);
+                while (rset1.next())
+                {
+                    livingnonname.add(rset1.getString("Code"));
+                    int total1 = rset1.getInt("Population");
+                    BigInteger total2 = BigInteger.valueOf(total1);
+                    total = total.add(total2);
+                }
+                for(String eachcodecou: livingnonname){
+                    String strSelect1 = "SELECT sum(Population) as popcity FROM city WHERE CountryCode = '"+ eachcodecou + "' Group By CountryCode";
+                    BigInteger cccity = getpopulationcity(strSelect1);
+                    popcity = popcity.add(cccity);
+                }
+                conpop1.total = total;
+                conpop1.citypop = popcity;
+                livingnoncontinent.add(conpop1);
+            }
+            return livingnoncontinent;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get living and non-living population continent detail");
+            return null;
+        }
+    }
+
+
+    //Living and non-living population of regions
+    public ArrayList<population> getlivingnonregion() throws SQLException {
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT COUNT(Name), Region FROM country GROUP BY Region ";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Extract Languages information
+            ArrayList<population> livingnonregion= new ArrayList<population>();
+            ArrayList<String> livingnonnamereg = new ArrayList<String>();
+            while (rset.next()) {
+                livingnonnamereg.add(rset.getString("Region"));
+            }
+            for(String eachregdetail:livingnonnamereg){
+                population regpop1 =  new population();
+                ArrayList<String> livingnonname = new ArrayList<String>();
+                BigInteger total = new BigInteger("0");
+                BigInteger popcity = new BigInteger("0");
+                regpop1.name = eachregdetail;
+                String totalpop = "SELECT Code, Population FROM country WHERE Region = '" + eachregdetail +"'";
+                ResultSet rset1 = stmt.executeQuery(totalpop);
+                while (rset1.next())
+                {
+                    livingnonname.add(rset1.getString("Code"));
+                    int total1 = rset1.getInt("Population");
+                    BigInteger total2 = BigInteger.valueOf(total1);
+                    total = total.add(total2);
+                }
+                for(String eachcodecou: livingnonname){
+                    String strSelect1 = "SELECT sum(Population) as popcity FROM city WHERE CountryCode = '"+ eachcodecou + "' Group By CountryCode";
+                    BigInteger cccity = getpopulationcity(strSelect1);
+                    popcity = popcity.add(cccity);
+                }
+                regpop1.total = total;
+                regpop1.citypop = popcity;
+                livingnonregion.add(regpop1);
+            }
+            return livingnonregion;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get living and non-living population region detail");
+            return null;
+        }
+    }
+
+    public BigInteger getpopulationcity(String popci)
+    {
+        try {
+            BigInteger ccity = new BigInteger("0");
+            Statement stmt = con.createStatement();
+            ResultSet popcire = stmt.executeQuery(popci);
+            while (popcire.next())
+            {
+                int popci1 = popcire.getInt("popcity");
+                BigInteger popci2 = BigInteger.valueOf(popci1);
+                ccity = ccity.add(popci2);
+            }
+            return ccity;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("NONE");
+            return null;
+        }
+    }
+
+
+
+    //Living and non-living population of countries
+
+
+
+
     //Print All of Country Ouput
     public void printcountrylist(ArrayList<country> countrylist) {
         // Check country is not null
@@ -1194,5 +1334,50 @@ public class App {
             System.out.println(cty_string);
         }
     }
+
+    //Living and Non-Living Continent
+    public void pringlivingnoncontinent(ArrayList<population> livingnoncontinent) {
+        // Check language is not null
+        if (livingnoncontinent == null) {
+            System.out.println("No Living Non Continent Information");
+            return;
+        }
+        // Loop over all countries in the list
+        for (population pop : livingnoncontinent) {
+            if (pop == null)
+            {
+                System.out.println("NULL");
+            }
+            else{
+                BigDecimal perc = new BigDecimal("100");
+                BigDecimal citypertage = new BigDecimal (pop.citypop).multiply(perc).divide( new BigDecimal (pop.total), 2);
+                BigDecimal nonlivingper = perc.subtract(citypertage);
+                System.out.println("Total population of " +pop.name+ "living in cities is " + citypertage+ "%" + " and non living in cities is " + nonlivingper + "%");
+            }
+        }
+    }
+
+    //Living and Non-Living Region
+    public void pringlivingnonregion(ArrayList<population> livingnonregion) {
+        // Check language is not null
+        if (livingnonregion == null) {
+            System.out.println("No Living Non Region Information");
+            return;
+        }
+        // Loop over all countries in the list
+        for (population pop : livingnonregion) {
+            if (pop == null)
+            {
+                System.out.println("NULL");
+            }
+            else{
+                BigDecimal perc = new BigDecimal("100");
+                BigDecimal citypertage = new BigDecimal (pop.citypop).multiply(perc).divide( new BigDecimal (pop.total), 2);
+                BigDecimal nonlivingper = perc.subtract(citypertage);
+                System.out.println("Total population of " +pop.name+ "living in cities is " + citypertage+ "%" + " and non living in cities is " + nonlivingper );
+            }
+        }
+    }
+
 
 }
