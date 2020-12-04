@@ -1344,15 +1344,16 @@ public class App {
         }
         // Loop over all countries in the list
         for (population pop : livingnoncontinent) {
-            if (pop == null)
+            BigInteger total = pop.total;
+            if (total.compareTo(BigInteger.ZERO) == 0)
             {
-                System.out.println("NULL");
+                System.out.println("Total population of " +pop.name+ "living in cities is " + pop.citypop+ "%" + " and non living in cities is " + total.subtract(pop.citypop));
             }
             else{
                 BigDecimal perc = new BigDecimal("100");
                 BigDecimal citypertage = new BigDecimal (pop.citypop).multiply(perc).divide( new BigDecimal (pop.total), 2);
                 BigDecimal nonlivingper = perc.subtract(citypertage);
-                System.out.println("Total population of " +pop.name+ "living in cities is " + citypertage+ "%" + " and non living in cities is " + nonlivingper + "%");
+                System.out.println("Total population of " +pop.name+ "living in cities is " + citypertage+ "%" + " and non living in cities is " + nonlivingper );
             }
         }
     }
@@ -1366,9 +1367,10 @@ public class App {
         }
         // Loop over all countries in the list
         for (population pop : livingnonregion) {
-            if (pop == null)
+            BigInteger total = pop.total;
+            if (total.compareTo(BigInteger.ZERO) == 0)
             {
-                System.out.println("NULL");
+                System.out.println("Total population of " +pop.name+ "living in cities is " + pop.citypop+ "%" + " and non living in cities is " + total.subtract(pop.citypop));
             }
             else{
                 BigDecimal perc = new BigDecimal("100");
