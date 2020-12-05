@@ -50,6 +50,7 @@ public class App {
         ArrayList<country> WorldPopulation=a.getWorldPopulation();
         ArrayList<population> livingnoncontinent = a.getlivingnoncontinent();
         ArrayList<population> livingnonregion = a.getlivingnonregion();
+        ArrayList<population> livingnoncountry = a.getlivingnoncountry();
 
 
         //Countries in the world organised by largest population to smallest.
@@ -177,7 +178,8 @@ public class App {
         a.pringlivingnonregion(livingnonregion);
 
         //Living and non-living population of countries
-
+        System.out.println(" \n ++++++++++++++++++++++++++++++++ Living and Non-Living Population of Country +++++++++++++++++++++++++++ \n");
+        a.pringlivingnoncountry(livingnoncountry);
 
         // Disconnect from database
         a.disconnect();
@@ -1203,9 +1205,31 @@ public class App {
 
 
     //Living and non-living population of countries
-
-
-
+    public ArrayList<population> getlivingnoncountry() {
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT country.Name, country.Population, sum(city.Population) FROM country, city WHERE country.Code = city.CountryCode Group By country.Code";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Extract Languages information
+            ArrayList<population> livingnoncountry = new ArrayList<population>();
+            while (rset.next()) {
+                population lnc = new population();
+                lnc.name = rset.getString("country.Name");
+                lnc.citypop = BigInteger.valueOf(rset.getLong("sum(city.Population)"));
+                lnc.total = BigInteger.valueOf(rset.getLong("country.population"));
+                livingnoncountry.add(lnc);
+            }
+            return livingnoncountry;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get Language detail");
+            return null;
+        }
+    }
 
     //Print All of Country Ouput
     public void printcountrylist(ArrayList<country> countrylist) {
@@ -1323,7 +1347,7 @@ public class App {
             return;
         }
         // Print header
-        System.out.println(String.format("%-35s %25s", "CountryCode", "Language"));
+        System.out.println(String.format("%-35s %25s", "Number of Country", "Language"));
         // Loop over all countries in the list
         for (countrylanguage clg : languagelist) {
             if (clg == null)
@@ -1353,7 +1377,7 @@ public class App {
                 BigDecimal perc = new BigDecimal("100");
                 BigDecimal citypertage = new BigDecimal (pop.citypop).multiply(perc).divide( new BigDecimal (pop.total), 2);
                 BigDecimal nonlivingper = perc.subtract(citypertage);
-                System.out.println("Total population of " +pop.name+ "living in cities is " + citypertage+ "%" + " and non living in cities is " + nonlivingper );
+                System.out.println("Total population of " +pop.name+ "living in cities is " + citypertage+ "%" + " and non living in cities is " + nonlivingper +"%");
             }
         }
     }
@@ -1376,10 +1400,32 @@ public class App {
                 BigDecimal perc = new BigDecimal("100");
                 BigDecimal citypertage = new BigDecimal (pop.citypop).multiply(perc).divide( new BigDecimal (pop.total), 2);
                 BigDecimal nonlivingper = perc.subtract(citypertage);
-                System.out.println("Total population of " +pop.name+ "living in cities is " + citypertage+ "%" + " and non living in cities is " + nonlivingper );
+                System.out.println("Total population of " +pop.name+ "living in cities is " + citypertage+ "%" + " and non living in cities is " + nonlivingper +"%");
             }
         }
     }
 
+    //Living and Non-Living Country
+    public void pringlivingnoncountry(ArrayList<population> livingnoncountry) {
+        // Check language is not null
+        if (livingnoncountry == null) {
+            System.out.println("No Living Non Country Information");
+            return;
+        }
+        // Loop over all countries in the list
+        for (population pop : livingnoncountry) {
+            BigInteger total = pop.total;
+            if (total.compareTo(BigInteger.ZERO) == 0)
+            {
+                System.out.println("Total population of " +pop.name+ "living in cities is " + pop.citypop+ "%" + " and non living in cities is " + total.subtract(pop.citypop));
+            }
+            else{
+                BigDecimal perc = new BigDecimal("100");
+                BigDecimal citypertage = new BigDecimal (pop.citypop).multiply(perc).divide( new BigDecimal (pop.total), 2);
+                BigDecimal nonlivingper = perc.subtract(citypertage);
+                System.out.println("Total population of " +pop.name+ "living in cities is " + citypertage+ "%" + " and non living in cities is " + nonlivingper + "%");
+            }
+        }
+    }
 
 }
