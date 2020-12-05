@@ -34,7 +34,6 @@ rectangle "World Information System" {
     C1 --> (Display the population of people, people living in cities, and people not living in cities in each region)
     C1 --> (Display the population of people, people living in cities, and people not living in cities in each country)
     C1 --> (Display the  Population of World)
-    C1 --> (Display the  Population of World)
     C1 --> (Display the  Population of a Continent)
     C1 --> (Display the  Population of a Region)
     C1 --> (Display the  Population of a Country)

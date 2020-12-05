@@ -16,13 +16,13 @@ Output will not produce
 ##Primary Actor
 Client 
 ##Trigger
- Cleint collects the World data from world.sql 
+ Client collects the World data from world.sql 
 ##MAIN SUCCESS SCENARIO
  1. Client collects name of the countries and population to get the top populated countries for.
  2. Filters the top populated countries 
  3. Print the top populated countries   
 ##EXTENSIONS
-Clinet does not exit
+Client does not exit
 ##SUB-VARIATIONS
 None 
 ##SCHEDULE

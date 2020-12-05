@@ -53,4 +53,4 @@ Bandages**
 |  29 |  The population of a country.                                                                               | YES  |  ![29](./Image/29.png) | 
 |  30 |  The population of a district.                                                                              | YES  |  ![30](./Image/30.png) | 
 |  31 |  The population of a city.                                                                                  | YES  |  ![31](./Image/31.png) | 
-|  32 |  The Languages from greatest number to smallest.                                                            | YES  |  ![32](./Image/32.png) | 
+|  32 |  The Languages from greatest number to smallest.                                                            | NO  |  ![32](./Image/32.png) | 
