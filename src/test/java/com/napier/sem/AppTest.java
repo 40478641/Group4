@@ -31,4 +31,84 @@ class AppTest
         citylist.add(null);
         app.printcitylist(citylist);
     }
+    @Test
+    void printPopulationRegion()
+    {
+        ArrayList<country> regions = new ArrayList<country>();
+//        regions.add(null);
+        app.printPopulationRegion(null);
+    }
+
+    @Test
+    void printWorldPopulation()
+    {
+        ArrayList<country> WorldPopulation = new ArrayList<country>();
+//        CityPopulation.add(null);
+        app.printWorldPopulation(null);
+    }
+
+    @Test
+    void printPopulationContinent()
+    {
+        ArrayList<country> continents = new ArrayList<country>();
+        //continents.add(null);
+        app.printPopulationContinent(null);
+    }
+    @Test
+    void printPopulationCountry()
+    {
+        ArrayList<country> country = new ArrayList<country>();
+//        country.add(null);
+        app.printPopulationCountry(null);
+    }
+    @Test
+    void printDistrictPopulation()
+    {
+        ArrayList<city> District = new ArrayList<city>();
+//        District.add(null);
+        app.printDistrictPopulation(null);
+    }
+
+    @Test
+    void printCityPopulation()
+    {
+        ArrayList<city> CityPopulation = new ArrayList<city>();
+//        CityPopulation.add(null);
+        app.printCityPopulation(null);
+    }
+
+    @Test
+    void printlanguagelist()
+    {
+        ArrayList<countrylanguage> languagelist = new ArrayList<countrylanguage>();
+        languagelist.add(null);
+        app.printlanguagelist(languagelist);
+    }
+
+    @Test
+    void pringlivingnoncontinent()
+    {
+        ArrayList<population> livingnoncontinent = new ArrayList<population>();
+//        livingnoncontinent.add(null);
+        app.pringlivingnoncontinent(null);
+    }
+
+
+    @Test
+    void pringlivingnonregion()
+    {
+        ArrayList<population> livingnonregion = new ArrayList<population>();
+//        livingnonregion.add(null);
+        app.pringlivingnonregion(null);
+    }
+
+    @Test
+    void pringlivingnoncountry()
+    {
+        ArrayList<population> livingnoncountry = new ArrayList<population>();
+//        livingnoncountry.add(null);
+        app.pringlivingnoncountry(null);
+    }
+
+
 }
