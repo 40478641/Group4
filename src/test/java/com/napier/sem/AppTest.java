@@ -85,4 +85,30 @@ class AppTest
         app.printlanguagelist(languagelist);
     }
 
+    @Test
+    void pringlivingnoncontinent()
+    {
+        ArrayList<population> livingnoncontinent = new ArrayList<population>();
+//        livingnoncontinent.add(null);
+        app.pringlivingnoncontinent(null);
+    }
+
+
+    @Test
+    void pringlivingnonregion()
+    {
+        ArrayList<population> livingnonregion = new ArrayList<population>();
+//        livingnonregion.add(null);
+        app.pringlivingnonregion(null);
+    }
+
+    @Test
+    void pringlivingnoncountry()
+    {
+        ArrayList<population> livingnoncountry = new ArrayList<population>();
+//        livingnoncountry.add(null);
+        app.pringlivingnoncountry(null);
+    }
+
+
 }

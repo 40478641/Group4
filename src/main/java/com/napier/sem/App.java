@@ -54,132 +54,136 @@ public class App {
 
 
         //Countries in the world organised by largest population to smallest.
-        System.out.println(" \n ++++++++++++++++~ Country organised by largest population to smallest ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 1.  Country organised by largest population to smallest ++++++++++++++++ \n ");
         a.printcountrylist(countrylist);
 
         //Countries in a continent organised by largest population to smallest
-        System.out.println(" \n ++++++++++++++++~ Countries in a continent organised by largest population to smallest ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 2.  Countries in a continent organised by largest population to smallest ++++++++++++++++ \n ");
         a.printcountrylist(countrycontinentlist);
 
         //countries in a region organised by largest population to smallest
-        System.out.println(" \n ++++++++++++++++~ Countries in a region organised by largest population to smallest ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 3. Countries in a region organised by largest population to smallest ++++++++++++++++ \n ");
         a.printcountrylist(countryregionlist);
 
         //Top 10 populated countries in the world
-        System.out.println(" \n ++++++++++++++++~ Top 10 populated countries in the world ~++++++++++++++++~ \n ");
+        System.out.println(" \n ++++++++++++++++ 4. Top 10 populated countries in the world ++++++++++++++++ \n ");
         a.printcountrylist(countryworld10);
 
         //Top 10 populated countries in a continent
-        System.out.println(" \n ++++++++++++++++~ Top 10 Populated countries in Asia ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 5. Top 10 Populated countries in Asia  ++++++++++++++++ \n ");
         a.printcountrylist(countrycontinent10);
 
         //Top 10 populated countries in a region
-        System.out.println(" \n ++++++++++++++++~ Top 10 populated countries in Eastern Asia Region ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 6.  Top 10 populated countries in Eastern Asia Region ++++++++++++++++ \n ");
         a.printcountrylist(countryregion10);
 
         //Cities in the world organised by largest population to smallest
-        System.out.println(" \n ++++++++++++++++~ Cities in the world organised by largest population to smallest ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 7.  Cities in the world organised by largest population to smallest ++++++++++++++++ \n ");
         a.printcitylist(cityworldlist);
 
         //Cities in a continent organised by largest population to smallest
-        System.out.println(" \n ++++++++++++++++~ Cities in a continent organised by largest population to smallest ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 8. Cities in a continent organised by largest population to smallest ++++++++++++++++ \n ");
         a.printcitylist(citycontinentlist);
 
         //Cities in a region organised by largest population to smallest
-        System.out.println(" \n ++++++++++++++++~ Cities in a region organised by largest population to smallest ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 9. Cities in a region organised by largest population to smallest ++++++++++++++++ \n ");
         a.printcitylist(cityregionlist);
 
         //Cities in a country organised by largest population to smallest
-        System.out.println(" \n ++++++++++++++++~ Cities in a country organised by largest population to smallest ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 10. Cities in a country organised by largest population to smallest ++++++++++++++++ \n ");
         a.printcitylist(citycountrylist);
 
         //Cities in a district organised by largest population to smallest
-        System.out.println(" \n ++++++++++++++++~ Cities in a district organised by largest population to smallest ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 11. Cities in a district organised by largest population to smallest ++++++++++++++++ \n ");
         a.printcitylist(citydistrictlist);
 
         //Top 10 populated cities in the world
-        System.out.println(" \n ++++++++++++++++~ Top 10 populated cities in the world ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 12.  Top 10 populated cities in the world ++++++++++++++++ \n ");
         a.printcitylist(cityworldlimit10);
 
         //Top 10 populated cities in a continent
-        System.out.println(" \n ++++++++++++++++~ Top 10 populated cities in a continent ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 13. Top 10 populated cities in a continent ++++++++++++++++ \n ");
         a.printcitylist(citycontinentlimit10);
 
         //Top 10 populated cities in a region
-        System.out.println(" \n ++++++++++++++++~ Top 10 populated cities in a region ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 14.  Top 10 populated cities in a region ++++++++++++++++ \n ");
         a.printcitylist(cityregionlimit10);
 
         //Top 10 populated cities in a country
-        System.out.println(" \n ++++++++++++++++~ Top 10 populated cities in a country ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 15. Top 10 populated cities in a country ++++++++++++++++ \n ");
         a.printcitylist(citycountrylimit10);
 
         //Top 10 populated cities in a district
-        System.out.println(" \n ++++++++++++++++~ Top 10 populated cities in a district ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 16. Top 10 populated cities in a district ++++++++++++++++ \n ");
         a.printcitylist(citydistrictlimit10);
 
         //Capital cities in the world organised by largest population to smallest
-        System.out.println(" \n ++++++++++++++++ Capital cities in the world organised by largest population to smallest ++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 17. Capital cities in the world organised by largest population to smallest ++++++++++++++++ \n ");
         a.printcitylist(capitallist);
 
         //Capital cities in the continent organised by largest population to smallest
-        System.out.println(" \n ++++++++++++++++ Capital cities in the world organised by largest population to smallest ++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 18. Capital cities in the world organised by largest population to smallest ++++++++++++++++ \n ");
         a.printcitylist(capitalcontinentlist);
 
         //Capital cities in the region organised by largest population to smallest
-        System.out.println(" \n ++++++++++++++++ Capital cities in the region organised by largest population to smallest ++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 19. Capital cities in the region organised by largest population to smallest ++++++++++++++++ \n ");
         a.printcitylist(CapitalRegionList);
 
         //Top 10 populated capital cities in the world
-        System.out.println(" \n ++++++++++++++++~ Top 10 populated capital cities in the world ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 20. Top 10 populated capital cities in the world ++++++++++++++++ \n ");
         a.printcitylist(CapitalLimit10);
 
         //Top 10 populated capital cities in a continent
-        System.out.println(" \n ++++++++++++++++~ Top 10 populated capital cities in a continent ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 21. Top 10 populated capital cities in a continent ++++++++++++++++ \n ");
         a.printcitylist(CapitalContinentLimit10);
 
         //Top 10 populated capital cities in a region
-        System.out.println(" \n ++++++++++++++++~ Top 10 populated capital cities in a region ~++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 22. Top 10 populated capital cities in a region ++++++++++++++++ \n ");
         a.printcitylist(CapitalRegionLimit10);
 
-        //Language from largest to smallest
-        System.out.println(" \n ++++++++++++++++~ Country Language Largest to Smallest ~++++++++++++++++ \n ");
-        a.printlanguagelist(languagelist);
-
-        //Print population of a continent
-        System.out.println(" \n  ++++++++++++++++++++++++++++++++The population of a Continnet +++++++++++++++++++++++++++ \n ");
-        a.printPopulationContinent(ContinentPopulation);
-
-        //The population of a region
-        System.out.println(" \n ++++++++++++++++++++++++++++++++The population of a region+++++++++++++++++++++++++++ \n ");
-        a.printPopulationRegion(RegionPopulation);
-
-        //The population of a country
-        System.out.println(" \n ++++++++++++++++++++++++++++++++The population of a Country +++++++++++++++++++++++++++ \n ");
-        a.printPopulationCountry(CountryPopulation);
-
-        //The population of a District
-        System.out.println(" \n ++++++++++++++++++++++++++++++++The population of a District +++++++++++++++++++++++++++ \n ");
-        a.printDistrictPopulation(DistrictPopulation);
-
-        //The population of a City
-        System.out.println(" \n ++++++++++++++++++++++++++++++++The population of a City +++++++++++++++++++++++++++ \n ");
-        a.printCityPopulation(CityPopulation);
-
-        //The population of World
-        System.out.println(" \n ++++++++++++++++++++++++++++++++The population of World +++++++++++++++++++++++++++ \n ");
-        a.printWorldPopulation(WorldPopulation);
-
         //Living and non-living population of continent
-        System.out.println(" \n ++++++++++++++++++++++++++++++++ Living and Non-Living Population of Continents +++++++++++++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 23. Living and Non-Living Population of Continents ++++++++++++++++ \n ");
         a.pringlivingnoncontinent(livingnoncontinent);
 
         //Living and non-living population of regions
-        System.out.println(" \n ++++++++++++++++++++++++++++++++ Living and Non-Living Population of Regions +++++++++++++++++++++++++++ \n ");
+        System.out.println(" \n ++++++++++++++++ 24. Living and Non-Living Population of Regions ++++++++++++++++ \n ");
         a.pringlivingnonregion(livingnonregion);
 
         //Living and non-living population of countries
-        System.out.println(" \n ++++++++++++++++++++++++++++++++ Living and Non-Living Population of Country +++++++++++++++++++++++++++ \n");
+        System.out.println(" \n ++++++++++++++++ 25. Living and Non-Living Population of Country ++++++++++++++++ \n");
         a.pringlivingnoncountry(livingnoncountry);
+
+        //The population of World
+        System.out.println(" \n ++++++++++++++++ 26. The population of World ++++++++++++++++ \n ");
+        a.printWorldPopulation(WorldPopulation);
+
+
+        //Print population of a continent
+        System.out.println(" \n ++++++++++++++++ 27. The population of a Continnet ++++++++++++++++ \n ");
+        a.printPopulationContinent(ContinentPopulation);
+
+        //The population of a region
+        System.out.println(" \n ++++++++++++++++ 28. The population of a region ++++++++++++++++ \n ");
+        a.printPopulationRegion(RegionPopulation);
+
+        //The population of a country
+        System.out.println(" \n ++++++++++++++++ 29. The population of a Country ++++++++++++++++ \n ");
+        a.printPopulationCountry(CountryPopulation);
+
+        //The population of a District
+        System.out.println(" \n ++++++++++++++++ 30. The population of a District ++++++++++++++++ \n ");
+        a.printDistrictPopulation(DistrictPopulation);
+
+        //The population of a City
+        System.out.println(" \n ++++++++++++++++ 31. The population of a City ++++++++++++++++ \n ");
+        a.printCityPopulation(CityPopulation);
+
+        //Language from largest to smallest
+        System.out.println(" \n ++++++++++++++++ 32. Country Language Largest to Smallest ++++++++++++++++ \n ");
+        a.printlanguagelist(languagelist);
+
+
+
 
         // Disconnect from database
         a.disconnect();
